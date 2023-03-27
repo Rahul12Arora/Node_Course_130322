@@ -2,12 +2,13 @@
 Learning Node
 <h2>Intro:</h2>
 
-Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that allows developers to build server-side applications using JavaScript. In simple terms, it lets you write server-side code using JavaScript, the same language used for front-end development.
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that allows developers to build server-side applications using JavaScript. In simple terms, it lets you write server-side code using JavaScript, the same language used for front-end development.</br>
 
-One of the biggest advantages of Node.js is its ability to handle a large number of concurrent connections with low overhead. This makes it a popular choice for building real-time, high-traffic applications such as chat applications, online gaming platforms, and social media sites.
+One of the biggest advantages of Node.js is its ability to handle a large number of concurrent connections with low overhead. This makes it a popular choice for building real-time, high-traffic applications such as chat applications, online gaming platforms, and social media sites.</br>
 
-Node.js is also known for its event-driven, non-blocking I/O model, which allows it to handle asynchronous operations efficiently. This means that Node.js can handle multiple tasks simultaneously without getting bogged down, making it a good choice for building scalable applications.
+Node.js is also known for its event-driven, non-blocking I/O model, which allows it to handle asynchronous operations efficiently. This means that Node.js can handle multiple tasks simultaneously without getting bogged down, making it a good choice for building scalable applications.</br>
 
+Note - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.</br>
 
 <h2>Start:</h2>
 
