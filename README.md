@@ -93,3 +93,15 @@ const path = require('path');
 ```
 
 **fs module lets us create files/folders & write, override, join & append data**
+
+```
+fs.mkdir('test123',(err)=>{       //async module code
+if (err) throw err;
+console.log( "Folder created" );
+});
+
+console.log("test")               //sync
+
+//output => test
+            Folder created
+```
