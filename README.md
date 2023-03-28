@@ -9,7 +9,8 @@ One of the biggest advantages of Node.js is its ability to handle a large number
 Node.js is also known for its event-driven, non-blocking I/O model, which allows it to handle asynchronous operations efficiently. This means that Node.js can handle multiple tasks simultaneously without getting bogged down, making it a good choice for building scalable applications.</br>
 
 Note - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.</br>
-Note - npm run myscriptname
+Note - npm run myscriptname</br>
+Note- event queues takes in alot of operations at once, node is based on concept of non-blocking async operations but it can still be blocked by a sync blocking operation.</br>
 
 <h2>Start:</h2>
 
