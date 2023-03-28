@@ -90,6 +90,7 @@ Here's an example of a function wrapper in Node.js:
 
 ```
 const path = require('path');
+const fs = require('fs').promises;  //promises version so we can use .then()
 ```
 
 **fs module lets us create files/folders & write, override, join & append data**
