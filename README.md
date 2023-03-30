@@ -1,5 +1,6 @@
 # Node_Course_130322
 Learning Node
+
 <h2>Intro:</h2>
 
 Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that allows developers to build server-side applications using JavaScript. In simple terms, it lets you write server-side code using JavaScript, the same language used for front-end development.</br>
@@ -25,8 +26,11 @@ For eg: 'npm install uuid' is a package that we can install to generate random i
 
 Nodemon is a tool used in Node.js development that automatically restarts the Node.js application whenever changes are made to the code. This helps developers save time and effort by eliminating the need to manually stop and restart the server every time a code change is made.
 
+<h2>Export</h2>
+
 creating & exporting functions,objects,classes,etc, from other js file
-eg:-
+
+Correct way
 ```
 const person = {
     name: 'John Doe',
@@ -34,9 +38,13 @@ const person = {
 }
 
 module.exports = person;
-```
-or 
-```
+exports.person=person;
+
+//wrong way
+exports = {person:person}  // we need to export from module.exports
+
+or
+
 class Car {
   constructor(make, model, year) {
     this.make = make;
@@ -52,15 +60,15 @@ class Car {
 module.exports = Car;
 ```
 
+
 <h3>importing the above in another js file</h3>
 
 ```
 const person = require('./person');
 console.log(person.name);
-```
+
 or
 
-```
 const Car = require(./car);    //name of the file
 const myCar = new Car('Toyota', 'Camry', 2018);
 console.log(myCar.name)
@@ -108,6 +116,7 @@ console.log("test")               //sync
 ```
 
 <h3>28032023</h3>
+
 
 ```
 // const os = require('os');
@@ -226,3 +235,4 @@ examOver.emit('examOver');
 
 examOver.emit('examOver');
 ```
+
