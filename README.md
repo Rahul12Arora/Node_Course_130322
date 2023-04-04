@@ -73,6 +73,7 @@ export default function multiply(a, b) {
 ```
 
 <h3>Import</h3>
+
 ```
 // In another file where you want to use these functions:
 const math = require('./math.js');
@@ -92,6 +93,7 @@ import multiply, { add, subtract } from './math.js';
 ```
 
 option2
+
 ```
 const person = {
     name: 'John Doe',
