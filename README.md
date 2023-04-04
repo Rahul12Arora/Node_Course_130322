@@ -245,3 +245,48 @@ examOver.emit('examOver');
 ```
 
 **Note - add "type" = "module" in package.json if you want to use ES6 syntax instead of common js (require syntax will be replaced by import)
+
+<h2>HTML Module - Create server</h2>
+
+<ol>
+<li>The HTTP module in Node.js is one of the core modules and provides functionality to create and operate HTTP servers</li>
+<li>The HTTP module can be used to create servers that listen for incoming requests and respond to them with appropriate data.</li>
+<li>The HTTP module provides methods to handle incoming requests, such as the request method, URL, headers, and payload.</li>
+<li>To create an HTTP server using the HTTP module, you can use the createServer method and pass in a callback function to handle incoming requests.</li>
+<li>You can use various methods like statusCode, setHeader, and end to set the response status code, content type, and message.</li>
+<li>you can start the server using the listen method.</li>
+</ol>
+
+```
+const http = require('http');
+
+// Create a server that listens for incoming requests
+const server = http.createServer((req, res) => {
+
+  // Set the status code of the response
+  res.statusCode = 200;
+
+  // Set the content type of the response
+  res.setHeader('Content-Type', 'text/plain');
+
+  // Send the response to the client with a message
+  res.end('Hello, World!');
+});
+
+// Start the server and listen for incoming requests on port 3000
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+
+```
+
+<ol>
+<li>http.createServer() - This method creates an HTTP server instance. It takes a callback function as an argument that will be called each time a request is made to the server. The callback function takes two arguments: req (the request object) and res (the response object).
+</li>
+<li>res.statusCode - This property sets the HTTP status code of the response. The status code indicates whether a request has been successfully processed or not. The default status code is 200, which means "OK".</li>
+<li>res.setHeader() - This method sets a response header. A header is a key-value pair that provides additional information about the response, such as the content type, encoding, or caching instructions.</li>
+<li>res.end() - This method signals that the response is complete and sends it to the client. The optional data argument can be used to include a message in the response body.</li>
+<li>server.listen() - This method starts the server and begins listening for incoming requests on a specified port. The first argument is the port number to listen on, and the second argument is an optional callback function that will be called once the server has started listening.</li>
+</ol>
+
+
