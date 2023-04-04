@@ -244,3 +244,4 @@ examOver.emit('examOver');
 examOver.emit('examOver');
 ```
 
+**Note - add "type" = "module" in package.json if you want to use ES6 syntax instead of common js (require syntax will be replaced by import)
