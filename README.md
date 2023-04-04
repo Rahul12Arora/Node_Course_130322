@@ -41,7 +41,7 @@ module.exports = person;
 exports.person=person;
 
 //wrong way
-exports = {person:person}  // we need to export from module.exports
+exports = {person:person}  // we need to export to module.exports, creating a new exports file will create a completely new exports object that will not function as expected
 
 or
 
@@ -98,138 +98,83 @@ Here's an example of a function wrapper in Node.js:
 
 ```
 const path = require('path');
+```
+
+**File System Module (fs) lets us create files/folders & write, override, join & append data**
+
+```
+const fs = require('fs');
 const fs = require('fs').promises;  //promises version so we can use .then()
-```
 
-**fs module lets us create files/folders & write, override, join & append data**
-
-```
 fs.mkdir('test123',(err)=>{       //async module code
 if (err) throw err;
 console.log( "Folder created" );
 });
 
 console.log("test")               //sync
-
 //output => test
             Folder created
+
+# more on this
+
+fs.mkdir('test123')
+.then(() => {console.log('folder created')})
+.catch((err) => {console.log(err)})
+
+fs.watch('test123/test.txt').then((event, filename) => {console.log(event, filename)})
+
+fs.writeFile('test123/test.txt', 'Hello World').then(() => {console.log('file created')})
+.catch((err) => {console.log(err)})
+
+fs.readFile('test123/test.txt', (err,data) => {console.log(data);})
+
+fs.appendFile('test123/test.txt', 'this will append ? ')
+
+try {
+const value = fs.readFileSync('test123/tesere.txt', 'utf8')}
+catch (err) {
+console.log(err)
+console.log('code is running')
+}
+console.log('end of code');
 ```
 
 <h3>28032023</h3>
+**os module gives us infor about os**
 
 
 ```
-// const os = require('os');
+const os = require('os');
 
-const fs = require('fs')
-
-// console.log(" has changed");
-
-// values of os.platform()
-
+values of os.platform()
 // darwin (macOS)
-
 // freebsd (FreeBSD)
-
 // linux (Linux)
-
 // sunos (SunOS)
-
 // win32 (Windows)
 
-// if(os.platform() === 'win32'){
+if(os.platform() === 'win32'){
+console.log("Windows");
+}
 
-// console.log("Windows");
+os.cpus().forEach((cpu, index) => {
+console.log(`CPU ${index} : ${cpu.model}`);
+})
+console.log(os.arch()); //architecture
+console.log(os.freemem()); //free memory
+console.log(os.networkInterfaces()); //total memory
+```
 
-// }
-
-// os.cpus().forEach((cpu, index) => {
-
-// console.log(`CPU ${index} : ${cpu.model}`);
-
-// })
-
-// console.log(os.arch()); //architecture
-
-// console.log(os.freemem()); //free memory
-
-// console.log(os.networkInterfaces()); //total memory
-
-// File System Module
-
-// fs.mkdir('test123')
-
-// .then(() => {
-
-// console.log('folder created')
-
-// })
-
-// .catch((err) => {
-
-// console.log(err)
-
-// })
-
-// fs.watch('test123/test.txt').then((event, filename) => {
-
-// console.log(event, filename)
-
-// })
-
-// fs.writeFile('test123/test.txt', 'Hello World')
-
-// .then(() => {
-
-// console.log('file created')
-
-// })
-
-// .catch((err) => {
-
-// console.log(err)
-
-// })
-
-// fs.readFile('test123/test.txt', (err,data) => {
-
-// console.log(data);
-
-// })
-
-// fs.appendFile('test123/test.txt', 'this will append ? ')
-
-// try {
-
-// const value = fs.readFileSync('test123/tesere.txt', 'utf8')
-
-// } catch (err) {
-
-// // console.log(err)
-
-// console.log('code is running')
-
-// }
-
-// console.log('end of code');
-
+```
 const EventEmitter = require('events');
 
 class ExamOverEventEmitter extends EventEmitter {}
 
 const examOver = new ExamOverEventEmitter();
 
-examOver.on('examOver', () => {
+examOver.on('examOver', () => {console.log('exam is over says student 1');})
 
-console.log('exam is over says student 1');
-
-})
-
-examOver.on('examStarts', () => {
-
-console.log('exam is over says student 2');
-
-})
+examOver.on('examStarts', () => {console.log('exam is over says student 2');})
 
 examOver.emit('examOver');
 
