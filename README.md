@@ -26,11 +26,72 @@ For eg: 'npm install uuid' is a package that we can install to generate random i
 
 Nodemon is a tool used in Node.js development that automatically restarts the Node.js application whenever changes are made to the code. This helps developers save time and effort by eliminating the need to manually stop and restart the server every time a code change is made.
 
-<h2>Export</h2>
+<h2>Export & import</h2>
 
 creating & exporting functions,objects,classes,etc, from other js file
 
-Correct way
+<h3>Export</h3>
+
+```
+// In a math.js file:
+function add(a, b) {
+  return a + b;
+}
+
+function sub(a, b) {
+  return a - b;
+}
+
+function mul(a, b) {
+  return a * b;
+}
+
+function div(a, b) {
+  return a / b;
+}
+
+module.exports = {
+  add: add,
+  sub: sub,
+  mul: mul,
+  div: div,
+};
+-----------------------
+// exports.add = add;
+// exports.sub = sub;
+// exports.mul = mul;
+// exports.div = div;
+
+---------------------------------------------------------------------------------------------------
+export function add(a, b) {
+  return a + b;
+}
+
+export default function multiply(a, b) {
+  return a * b;
+}
+```
+
+<h3>Import</h3>
+```
+// In another file where you want to use these functions:
+const math = require('./math.js');
+console.log(math.add(2, 3)); // Output: 5
+console.log(math.mul(4, 5)); // Output: 20
+---------------------------------------------------
+const myFunction = require('./myModule.js').default;
+
+console.log(myFunction(2, 3)); // Output: 6
+
+------------------------------------------------------------------------------------------------------
+
+ES6 WAY
+
+import multiply, { add, subtract } from './math.js';
+//multiply is the default export from math.js file; add & subtract is simple export
+```
+
+option2
 ```
 const person = {
     name: 'John Doe',
@@ -38,13 +99,13 @@ const person = {
 }
 
 module.exports = person;
-exports.person=person;
+exports.person=person;            //this is also valid
 
 //wrong way
 exports = {person:person}  // we need to export to module.exports, creating a new exports file will create a completely new exports object that will not function as expected
 
 or
-
+exporting classes in this manner
 class Car {
   constructor(make, model, year) {
     this.make = make;
