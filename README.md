@@ -289,4 +289,58 @@ server.listen(3000, () => {
 <li>server.listen() - This method starts the server and begins listening for incoming requests on a specified port. The first argument is the port number to listen on, and the second argument is an optional callback function that will be called once the server has started listening.</li>
 </ol>
 
+<h2>RESTful APIs</h2>
 
+```
+const http = require('http');
+
+// Create a server
+const server = http.createServer((req, res) => {
+  // Set the response header
+  res.setHeader('Content-Type', 'text/plain');
+
+  // Log the request method, URL, and headers
+  console.log(`Received a ${req.method} request for URL: ${req.url}`);
+  console.log(`Headers: ${JSON.stringify(req.headers)}`);
+
+  // Handle different request methods and URLs
+  if (req.method === 'GET') {
+    if (req.url === '/') {
+      // Handle root URL
+      res.write('Hello, world!');
+      res.end();
+    } else if (req.url === '/about') {
+      // Handle /about URL
+      res.write('About us page');
+      res.end();
+    } else {
+      // Handle unknown URLs
+      res.statusCode = 404; // Not Found
+      res.write('404 - Page not found');
+      res.end();
+    }
+  } else if (req.method === 'POST') {
+    // Handle POST request
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      console.log('Received request body:', body);
+      // Process the request body as needed
+      res.write('Received request body: ' + body);
+      res.end();
+    });
+  } else {
+    // Handle unknown request methods
+    res.statusCode = 400; // Bad Request
+    res.write('400 - Bad Request');
+    res.end();
+  }
+});
+
+// Start the server and listen for incoming requests
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
