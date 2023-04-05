@@ -344,3 +344,80 @@ server.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
 ```
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>REST API Concepts & Asynchronous Handling of Data</title>
+</head>
+<body>
+  <h1>REST API Concepts & Asynchronous Handling of Data</h1>
+  <table>
+    <tr>
+      <th>Concept</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>REST API</td>
+      <td>
+        <ul>
+          <li>REST (Representational State Transfer) is an architectural style for designing networked applications.</li>
+          <li>REST APIs use HTTP methods (such as GET, POST, PUT, DELETE) to perform operations on resources over the web.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Asynchronous</td>
+      <td>
+        <ul>
+          <li>Asynchronous programming is a pattern where tasks are performed concurrently without blocking the main thread of execution.</li>
+          <li>Allows for efficient handling of multiple requests without waiting for each request to complete before moving on to the next one.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Handling Data</td>
+      <td>
+        <ul>
+          <li>REST APIs typically handle data in a serialized format such as JSON or XML.</li>
+          <li>Data is sent in the request body for POST and PUT requests, and received in the request body for PUT and DELETE requests.</li>
+          <li>Data is parsed and processed asynchronously using event listeners or Promise-based APIs.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Event-driven</td>
+      <td>
+        <ul>
+          <li>REST APIs in Node.js are often implemented using an event-driven architecture.</li>
+          <li>Event listeners are used to handle incoming requests and perform actions asynchronously.</li>
+          <li>Event-driven programming allows for efficient handling of multiple concurrent requests without blocking the main thread of execution.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Non-blocking I/O</td>
+      <td>
+        <ul>
+          <li>Node.js uses a non-blocking I/O model.</li>
+          <li>Allows for handling multiple requests simultaneously without blocking the main thread of execution.</li>
+          <li>Enables building high-performance REST APIs that can handle a large number of concurrent requests efficiently.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Callbacks/Promises</td>
+      <td>
+        <ul>
+          <li>Asynchronous programming in Node.js can be done using callbacks, Promises, or async/await.</li>
+          <li>Callbacks are functions that are passed as arguments to asynchronous functions and are invoked when the task is complete.</li>
+          <li>Promises provide a structured way of handling asynchronous operations, allowing for more readable and maintainable code.</li>
+          <li>Async/await is a syntax sugar on top of Promises, making it more concise and expressive for handling asynchronous operations in Node.js.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+```
