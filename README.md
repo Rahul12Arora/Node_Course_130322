@@ -345,7 +345,6 @@ server.listen(3000, () => {
 });
 ```
 
-```
   <table>
     <tr>
       <th>Concept</th>
@@ -411,4 +410,3 @@ server.listen(3000, () => {
       </td>
     </tr>
   </table>
-```
