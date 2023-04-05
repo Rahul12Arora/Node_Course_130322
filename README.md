@@ -455,4 +455,7 @@ URL {
 ```
 // we can format & append to urlobject & get a new url
 console.log(url.format(myurl+'99i'));
+---------------------------------------------------------------------------------
+// we can add/append key:value pair to searchParams
+myurl.searchParams.append('user','rahul')
 ```
