@@ -345,6 +345,13 @@ server.listen(3000, () => {
 });
 ```
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>REST API Concepts & Asynchronous Handling of Data</title>
+</head>
+<body>
+  <h1>REST API Concepts & Asynchronous Handling of Data</h1>
   <table>
     <tr>
       <th>Concept</th>
@@ -410,3 +417,6 @@ server.listen(3000, () => {
       </td>
     </tr>
   </table>
+</body>
+</html>
+
