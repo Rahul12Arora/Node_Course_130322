@@ -517,6 +517,7 @@ server.listen(5050, ()=>{
 ```
 
 <h3>Dynamic API</H3>
+
 ```
 // Build file path
   let filePath = path.join(
@@ -584,4 +585,5 @@ server.listen(5050, ()=>{
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 ```
