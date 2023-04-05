@@ -417,3 +417,13 @@ server.listen(3000, () => {
 </body>
 </html>
 
+<h2>URL Module</h2>
+
+```
+const url =require('url');
+
+const myurl =new URL('https://nodejs.org/api/url.html#new-urlinput-base%27)
+
+console.log(myurl);
+
+```
