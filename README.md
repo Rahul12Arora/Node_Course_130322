@@ -459,3 +459,32 @@ console.log(url.format(myurl+'99i'));
 // we can add/append key:value pair to searchParams
 myurl.searchParams.append('user','rahul')
 ```
+
+<h2>Redirection based on different url => handled from backend</h2>
+
+```
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if(req.url === '/'){
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('<h1>Home</h1>')
+    }
+    else if(req.url === '/About'){
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('<h1>About</h1>')
+    }
+    else if(req.url === '/Contact'){
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('<h1>Contact</h1>')
+    }
+    else{
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Error page on my website in case you enter wrong url')
+    }
+})
+
+server.listen(5050, ()=>{
+    console.log('listening on 5050');
+})
+```
