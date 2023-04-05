@@ -426,4 +426,29 @@ const myurl =new URL('https://nodejs.org/api/url.html#new-urlinput-base%27)
 
 console.log(myurl);
 
+//OUTPUT
+
+URL {
+  href: 'https://nodejs.org/api/url.html#new-urlinput-base%27',
+  origin: 'https://nodejs.org',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'nodejs.org',
+  hostname: 'nodejs.org',
+  port: '',
+  pathname: '/api/url.html',
+  search: '',
+  searchParams: URLSearchParams {},
+  hash: '#new-urlinput-base%27'
+}
+
+//We now know that we can access all these properties by myurl object
+```
+
+<h3>url module methods</h3>
+
+```
+// we can format & append to urlobject & get a new url
+console.log(url.format(myurl+'99i'));
 ```
