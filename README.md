@@ -422,25 +422,29 @@ server.listen(3000, () => {
 ```
 const url =require('url');
 
-const myurl =new URL('https://nodejs.org/api/url.html#new-urlinput-base%27)
+const myurl =new URL('https://www.amazon.in/s?k=phone&crid=1GRV2L0V9R8HM&sprefix=phone%2Caps%2C281&ref=nb_sb_noss_1')
 
 console.log(myurl);
 
 //OUTPUT
 
 URL {
-  href: 'https://nodejs.org/api/url.html#new-urlinput-base%27',
-  origin: 'https://nodejs.org',
+  href: 'https://www.amazon.in/s?k=phone&crid=1GRV2L0V9R8HM&sprefix=phone%2Caps%2C281&ref=nb_sb_noss_1',
+  origin: 'https://www.amazon.in',
   protocol: 'https:',
   username: '',
   password: '',
-  host: 'nodejs.org',
-  hostname: 'nodejs.org',
+  host: 'www.amazon.in',
+  hostname: 'www.amazon.in',
   port: '',
-  pathname: '/api/url.html',
-  search: '',
-  searchParams: URLSearchParams {},
-  hash: '#new-urlinput-base%27'
+  pathname: '/s',
+  search: '?k=phone&crid=1GRV2L0V9R8HM&sprefix=phone%2Caps%2C281&ref=nb_sb_noss_1',
+  searchParams: URLSearchParams {
+    'k' => 'phone',
+    'crid' => '1GRV2L0V9R8HM',
+    'sprefix' => 'phone,aps,281',
+    'ref' => 'nb_sb_noss_1' },
+  hash: ''
 }
 
 //We now know that we can access all these properties by myurl object
