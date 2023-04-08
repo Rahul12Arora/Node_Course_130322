@@ -25,6 +25,7 @@ For eg: 'npm install uuid' is a package that we can install to generate random i
 ```
 npm install -g  nodemon          //install nodemon globally
 npm install --save-dev nodemon   //add nodemon in dev dependency
+npm i dotenv
 ```
 
 **Note-Inside package.json
